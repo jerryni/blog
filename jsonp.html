@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp demo</title>
+</head>
+<body>
+    <button id="sameOrigin">加载从同一服务器返回的js</button>
+    <button id="diffOrigin">加载从github返回的js</button>
+    <script>
+        document.getElementById('sameOrigin').onclick = function () {
+            var sp = document.createElement('script');
+
+            sp.src = 'data/jsonp.js';
+
+            document.body.appendChild(sp);
+        };
+
+        // jsonp的实现
+        document.getElementById('diffOrigin').onclick = function () {
+            var sp = document.createElement('script');
+
+            // 动态的做法就是. 如链接设置成 http://xx.com?callback=jsonWrap
+            // 后台返回 jsonWrap({ a: 123, b: 234});
+            sp.src = 'http://jerryni.github.io/test/test.js?callback=jsonWrap';
+            sp.onload = sp.onreadystatechange = function () {
+                
+                console.log('load script success');
+            };
+
+            window.jsonWrap = function(data) {
+                console.log('github data:', data);
+                window.jsonWrap = null;
+                sp.onload = sp.onreadystatechange = null;
+            }
+
+            document.body.appendChild(sp);
+        };
+    </script>
+</body>
+</html>
