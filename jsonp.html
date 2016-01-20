@@ -7,6 +7,8 @@
 <body>
     <button id="sameOrigin">加载从同一服务器返回的js</button>
     <button id="diffOrigin">加载从github返回的js</button>
+
+    <p>本地可以起一个服务, jsonp是可以正常使用的, 消息在console中显示</p>
     <script>
         document.getElementById('sameOrigin').onclick = function () {
             var sp = document.createElement('script');
