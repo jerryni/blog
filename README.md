@@ -1,10 +1,9 @@
-## 简易博文管理
-
-> 主要记录一些技术笔记
-
+# 文章列表
 ## 个性推荐
 
 - [每天一段前端小知识](https://github.com/jerryni/blog/issues/14)
+
+![每天一段前端小知识微信公众号](https://www.evernote.com/l/AaxPgHlw8PZPsYQXsHlrtc186pEzg8HPQRYB/image.jpg)
 
 ## js相关
 
