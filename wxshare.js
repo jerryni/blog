@@ -1,4 +1,4 @@
-// 官方在线：http://203.195.235.76/jssdk/
+// 官方在线DEMO：http://203.195.235.76/jssdk/
 alert('enter');
 
 var script = document.createElement('script');
@@ -75,11 +75,10 @@ script.onload = function() {
                 alert(JSON.stringify(res));
             }
         });
+        
+        alert('已注册获取“发送给朋友”状态事件');
     })
-
-
-    alert('已注册获取“发送给朋友”状态事件');
 };
-script.async = false; // This is required for synchronous execution
+script.async = false;
 document.documentElement.innerHTML = ''
 document.documentElement.appendChild(script);
