@@ -39,7 +39,7 @@ async function start() {
     if (timeDifference < 50) {
       await sendMail({
         subject: '亲爱的，您的iPhone13 Pro物流地址有变化哦~',
-        html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item, null, 2)}</pre>`
+        html: `<h2>${item.processingInstructions} 正在 ${item.opreateType}</h2> <br/> <br/> <pre>${JSON.stringify(item, null, 2)}</pre>`
       })
     }
   });
