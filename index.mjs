@@ -24,29 +24,20 @@ async function start() {
   }).then((res) => res.json())
   .then(async (res) => {
     const item = res.trails[0][0];
-
-    console.log('new Date()', new Date())
-    console.log('Date.now()', Date.now())
-    console.log('new Date(item.optime)', new Date(item.optime))
-    console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
     const now = new Date();
 
     // china time;
-    const cTime = new Date(item.optime);
-    cTime.setHours(cTime.getHours() - 8);
-    console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
-    console.log('cTime', cTime)
-    console.log('now - cTime', now.getTime() - cTime.getTime())
+    const targetTime = new Date(item.optime);
+    // china time to ufc+0 time
+    targetTime.setHours(cTime.getHours() - 8);
+    const timeDifference = Math.floor(now.getTime() - targetTime.getTime()) / 1000 / 60;
 
-    const timeDifference = Math.floor(Date.now() - new Date(item.optime).getTime()) / 1000 / 60;
-
-    console.log('result', timeDifference)
     // minutes
-    if (timeDifference < 30) {
-      // await sendMail({
-      //   subject: '您的iphone到这了',
-      //   html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item)}</pre>`
-      // })
+    if (timeDifference < 50) {
+      await sendMail({
+        subject: '您的iphone到这了',
+        html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item)}</pre>`
+      })
     }
   });
 }

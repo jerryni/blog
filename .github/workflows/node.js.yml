@@ -6,8 +6,8 @@ name: Node.js CI
 on:
   push:
   schedule:
-    # 10分钟一次，10 - 8 = 2; 10是utc时间
-    - cron: '*/2 * * * *'
+    # 58分钟一次，58 - 8 = 50; 50是utc+0时间
+    - cron: '*/50 * * * *'
 
 jobs:
   build:
