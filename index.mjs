@@ -26,7 +26,7 @@ async function start() {
     const item = res.trails[0][0];
 
     console.log('Date.now()', Date.now())
-    console.log('new Date(item.optime)', new Date(item.optime))
+    console.log('new Date(item.optime)', new Date(item.optime).getTime())
 
     const timeDifference = Math.floor(Date.now() - new Date(item.optime).getTime()) / 1000 / 60;
 
@@ -38,11 +38,6 @@ async function start() {
       //   html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item)}</pre>`
       // })
     }
-
-    await sendMail({
-      subject: 'test',
-      html: `xxx`
-    })
   });
 }
 
