@@ -30,14 +30,14 @@ jobs:
     - run: npm run start
 
     - name: 'Send mail'
-        uses: dawidd6/action-send-mail@master
-        with:
-          server_address: smtp.163.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: hello zhe
-          body: 'hello zhe content'
-          to: 308289891@qq.com
-          from: GitHub Actions
-          content_type: text/html
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.163.com
+        server_port: 465
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: hello zhe
+        body: 'hello zhe content'
+        to: 308289891@qq.com
+        from: GitHub Actions
+        content_type: text/html
