@@ -33,7 +33,7 @@ async function start() {
 
     // china time;
     const cTime = new Date(item.optime);
-    cTime.setHours(cTime.setHours() - 8);
+    cTime.setHours(cTime.getHours() - 8);
     console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
     console.log('cTime', cTime)
     console.log('now - cTime', now.getTime() - cTime.getTime())
