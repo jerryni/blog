@@ -25,12 +25,15 @@ async function start() {
   .then(async (res) => {
     const item = res.trails[0][0];
     const now = new Date();
-
+    console.log('now', now);
     // china time;
     const targetTime = new Date(item.optime);
     // china time to ufc+0 time
-    targetTime.setHours(cTime.getHours() - 8);
+    targetTime.setHours(targetTime.getHours() - 8);
+    console.log('targetTime', targetTime);
     const timeDifference = Math.floor(now.getTime() - targetTime.getTime()) / 1000 / 60;
+
+    console.log('timeDifference', timeDifference);
 
     // minutes
     if (timeDifference < 50) {
