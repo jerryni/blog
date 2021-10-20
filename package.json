@@ -4,7 +4,7 @@
   "description": "https://github.com/jerryni/blog/issues",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,5 +13,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  }
 }
