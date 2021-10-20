@@ -25,11 +25,18 @@ async function start() {
   .then(async (res) => {
     const item = res.trails[0][0];
 
-    if (Math.floor((Date.now() - new Date(item.optime)) / 1000 / 60) < 30) {
-      await sendMail({
-        subject: '您的iphone到这了',
-        html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item)}</pre>`
-      })
+    console.log('Date.now()', Date.now())
+    console.log('new Date(item.optime)', new Date(item.optime))
+
+    const timeDifference = Math.floor(Date.now() - new Date(item.optime)) / 1000 / 60;
+
+    console.log('result', timeDifference)
+    // minutes
+    if (timeDifference < 30) {
+      // await sendMail({
+      //   subject: '您的iphone到这了',
+      //   html: `${item.processingInstructions} 正在 ${item.opreateType} <br/> <pre>${JSON.stringify(item)}</pre>`
+      // })
     }
 
     await sendMail({
