@@ -30,4 +30,4 @@ jobs:
     - run: npm run build --if-present
     - run: npm run start
       env:
-        ACCESS_TOKEN: ${{ secrets.TARGET_MAIL }}
+        ACCESS_TOKEN: ${{ secrets.MAIL163_TOKEN }}
