@@ -28,7 +28,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run start
-    - - name: 'Send mail'
+    - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
           server_address: smtp.163.com
