@@ -29,6 +29,14 @@ async function start() {
     console.log('Date.now()', Date.now())
     console.log('new Date(item.optime)', new Date(item.optime))
     console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
+    const now = new Date();
+
+    // china time;
+    const cTime = new Date(item.optime);
+    cTime.setHours(cTime.setHours() - 8);
+    console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
+    console.log('cTime', cTime)
+    console.log('now - cTime', now.getTime() - cTime.getTime())
 
     const timeDifference = Math.floor(Date.now() - new Date(item.optime).getTime()) / 1000 / 60;
 
