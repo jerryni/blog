@@ -28,7 +28,7 @@ async function start() {
     console.log('Date.now()', Date.now())
     console.log('new Date(item.optime)', new Date(item.optime))
 
-    const timeDifference = Math.floor(Date.now() - new Date(item.optime)) / 1000 / 60;
+    const timeDifference = Math.floor(Date.now() - new Date(item.optime).getTime()) / 1000 / 60;
 
     console.log('result', timeDifference)
     // minutes
