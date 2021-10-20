@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "https://github.com/jerryni/blog/issues",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com.cnpmjs.org/jerryni/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
