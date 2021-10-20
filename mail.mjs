@@ -22,7 +22,7 @@ export async function sendMail({
   // 定义transport对象并发送邮件
   let info = await transporter.sendMail({
     from: 'z308289891@163.com', // 发送方邮箱的账号
-    to: ["308289891@qq.com"], // 邮箱接受者的账号
+    to: ["308289891@qq.com", "polly343900@qq.com"], // 邮箱接受者的账号
     subject: subject || "默认标题" , // Subject line
     text: "From Github Zhe", // 文本内容
     html: html || "<b>无主题</b>", // html 内容, 如果设置了html内容, 将忽略text内容
