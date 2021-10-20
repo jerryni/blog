@@ -25,8 +25,10 @@ async function start() {
   .then(async (res) => {
     const item = res.trails[0][0];
 
+    console.log('new Date()', new Date())
     console.log('Date.now()', Date.now())
-    console.log('new Date(item.optime)', new Date(item.optime).getTime())
+    console.log('new Date(item.optime)', new Date(item.optime))
+    console.log('new Date(item.optime).getTime()', new Date(item.optime).getTime())
 
     const timeDifference = Math.floor(Date.now() - new Date(item.optime).getTime()) / 1000 / 60;
 
