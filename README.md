@@ -1,1 +1,1 @@
-https://github.com/jerryni/blog/issues
+:alien: https://github.com/jerryni/blog/issues
